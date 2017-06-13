@@ -1,0 +1,80 @@
+NODE JS
+
+
+Insanely popular
+very fast
+JS used no need to learn other language.
+easy to use chat socket.
+
+V8 Engine
+
+
+NODE JS
+Node js written in c++.
+At the heart of node js is V8 engine.
+V8 engine converts the js to machine level.
+
+
+Global Object.
+ In node global object is not window as it is not in client side.
+ In node Global object is global, and it has some properties we can use.
+
+Clients and Server
+to make communicate between client and server need to connect client and server thats done by socket.
+
+Protocols
+ftp -->file
+http -->Website
+
+The way they sent from server to client is using TCP protocol.
+
+
+Steams and Buffers
+
+Buffer is temp storage.
+To send a large amount of data from server to client instead of sending it at once, we send chunk by chunk.
+Benefits
+We dont have to gather all data at once in memory instead we can get chunk by chunk.
+
+
+
+
+Express js
+
+It is best frmaewrork for routing
+template engine
+
+
+Template Engine
+app.set('view engine','ejs'); //app of express
+
+res.render('path',object);  // to send the data to the view
+
+
+Middleware
+The code which runs between request and response
+to feed static files.
+
+Query string
+
+url?dept=fdkfandname=Rishi
+
+req.query  //{dept:ddssa , name:rishi}
+
+
+
+Post
+
+We need to use body-parser module.
+
+var urlencodedParser = bodyParser.urlencoded({ extended: false })
+
+app.post('/login', urlencodedParser, function (req, res) {
+  if (!req.body) return res.sendStatus(400)     //req.body have the all the data which we have submitted from client side.
+  res.send('welcome, ' + req.body.username)
+})
+
+app.post('/login', urlencodedParser, function (req, res) {
+  if (!req.body) return res.sendStatus(400)     //req.body have the all the data which we have submitted from client side.
+res.render('path',data:req.body);  // to send the data to the view
+})
